@@ -1,0 +1,20 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "description": "This is for managing and cumminucating the requests and response through REST and GraphQl end points.",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "graphql": "^16.11.0",
+    "graphql-request": "^7.2.0",
+    "graphql-tag": "^2.12.6",
+    "log": "^6.3.2"
+  }
+}

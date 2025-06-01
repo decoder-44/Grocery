@@ -1,0 +1,7 @@
+This is for cart releated queries and mutations
+exposing graphQl endpoints to Orchestrator
+
+configs:
+java, spring boot,GraphQl
+
+This contains commerce catalog in which addition of products to the site or generating links for the products will be done

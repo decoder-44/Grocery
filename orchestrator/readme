@@ -1,0 +1,8 @@
+This is for managing and cumminucating the requests and response through REST and GraphQl end points.
+
+config: 
+should have node js and javascript
+insomniya or postman for testing API's
+
+
+this will not have any database

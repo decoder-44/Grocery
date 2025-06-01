@@ -1,0 +1,25 @@
+type Products {
+    id: ID!
+    productName: String!
+    uid: Int!
+    iid: String!
+    quantity: Int!
+    price: Float!
+    available: Boolean!
+}
+
+type Query {
+    getAllProducts: [Products!]!
+    getProductById(id: ID!): Products
+}
+
+input ProductInput {
+    productName: String!
+    quantity: Int!
+    price: Float!
+    available: Boolean!
+}
+
+type Mutation {
+    createOrAddProduct(productInput: ProductInput!): Products
+}
