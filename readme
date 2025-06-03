@@ -1,0 +1,29 @@
+Creating grocery list 
+functionalities : 
+1 createcart
+2 addProduct
+4 getAllProducts
+5 removeProduct
+6 updateProduct
+7 checkOut
+8 addInfo
+9 payment
+10 placeOrder
+11 getOrderDetails
+
+**********************************************************************************
+
+future enhancements : 
+=> creating and suggesting the grocery according to the dish a person wants to prepare for and for the number of people wanna prepare for.
+
+***********************************************************************************
+
+Imp feature to be added 
+=> customer support
+
+functonalities :=
+1 getProductByUid
+2 updateProductByUid
+3 disableProductByUid
+
+************************************************************************************
