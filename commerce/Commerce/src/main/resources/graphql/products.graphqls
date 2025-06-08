@@ -7,7 +7,9 @@ type Products {
     price: Float!
     available: Boolean!
 }
-
+type Cart {
+    cartId: String
+}
 type Query {
     getAllProducts: [Products!]!
     getProductById(id: ID!): Products
@@ -22,4 +24,5 @@ input ProductInput {
 
 type Mutation {
     createOrAddProduct(productInput: ProductInput!): Products
+    createEmptyCart: Cart
 }
