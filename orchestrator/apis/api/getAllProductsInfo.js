@@ -2,7 +2,6 @@ import { GetAllProducts } from "../../commerce/commerceFunctions/getAllProducts.
 
 export const getAllProductsInfo = (async (req, res) => {
     const inputdata = req.body?.input ?? null;
-
     try {
         const getAllProducts = new GetAllProducts();
         const response = await getAllProducts.getProducts(inputdata);
