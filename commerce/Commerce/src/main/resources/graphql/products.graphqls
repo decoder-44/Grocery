@@ -7,12 +7,25 @@ type Products {
     price: Float!
     available: Boolean!
 }
+
 type Cart {
-    cartId: String
+    cartId: String!
 }
+
+type CartProducts {
+    id: Int!
+    cart: Cart!
+    products: Products!
+}
+
 type Query {
     getAllProducts: [Products!]!
-    getProductById(id: ID!): Products
+    getProductById(input: GetProductByIdInput!): Products
+    getCartProductsByCartId(cartId: String!): [Products]!
+}
+
+input GetProductByIdInput {
+    id: Int!
 }
 
 input ProductInput {
@@ -22,7 +35,15 @@ input ProductInput {
     available: Boolean!
 }
 
+input ProductBasicInput {
+    productName: String!
+    quantity: Int!
+    price: Float!
+    available: Boolean!
+}
+
 type Mutation {
     createOrAddProduct(productInput: ProductInput!): Products
     createEmptyCart: Cart
+    addProductToCart(cartId: String!, productId: Int!): CartProducts
 }
