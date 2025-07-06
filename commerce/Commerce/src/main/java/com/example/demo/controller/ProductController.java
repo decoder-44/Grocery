@@ -1,14 +1,14 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.ProductInput;
+import com.example.demo.entity.input.ProductInput;
 import com.example.demo.entity.Products;
+import com.example.demo.entity.input.GetProductByIdInput;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
-
 import java.util.List;
 
 @Controller
@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @QueryMapping
-    public Products getProductById(@Argument int id){
-        return ProductService.getProductById(id);
+    public Products getProductById(@Argument GetProductByIdInput input) {
+        return ProductService.getProductById(input.getId());
     }
 }

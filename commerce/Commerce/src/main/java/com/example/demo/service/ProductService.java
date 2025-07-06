@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.ProductInput;
+import com.example.demo.entity.input.ProductInput;
 import com.example.demo.entity.Products;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.helperFunc.GenerateUniqueIds;
@@ -36,6 +36,6 @@ public class ProductService {
     }
 
     public Products getProductById(int id) {
-        return ProductRepository.getReferenceById(id);
+        return ProductRepository.getProductById(id);
     }
 }
