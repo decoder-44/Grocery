@@ -1,9 +1,11 @@
+// TopNav.js
 import React, { useState } from 'react';
 import '../AllCssFiles/TopNav.css';
 
-function TopNav() {
+function TopNav({ cartItems }) {
   const [showCategory, setShowCategory] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showCartDropdown, setShowCartDropdown] = useState(false);
 
   return (
     <div className="top-nav">
@@ -18,7 +20,23 @@ function TopNav() {
         )}
       </div>
 
-      <button>Cart</button>
+      <div className="dropdown">
+        <button onClick={() => setShowCartDropdown(prev => !prev)}>
+          Cart ({cartItems.length})
+        </button>
+        {showCartDropdown && (
+          <ul className="dropdown-menu">
+            {cartItems.length === 0 ? (
+              <li>Cart is empty</li>
+            ) : (
+              cartItems.map((item, idx) => (
+                <li key={idx}>{item.name}</li>
+              ))
+            )}
+          </ul>
+        )}
+      </div>
+
       <button>Orders</button>
 
       <div className="dropdown">
