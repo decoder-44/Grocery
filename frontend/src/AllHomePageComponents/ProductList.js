@@ -1,7 +1,8 @@
 import React from 'react';
 import '../AllCssFiles/ProductList.css';
+import AddToCart from './AddToCart.js';
 
-function ProductList({ filteredProducts }) {
+function ProductList({ filteredProducts, onAddToCart }) {
   return (
     <div className="products-list">
       {filteredProducts.map((product, idx) => (
@@ -9,6 +10,7 @@ function ProductList({ filteredProducts }) {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <span className="product-price">{product.price}</span>
+          <AddToCart product={product} onAdd={onAddToCart} className="add-to-cart"/>
         </div>
       ))}
     </div>
