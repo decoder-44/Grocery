@@ -3,7 +3,6 @@ import '../AllCssFiles/AddToCart.css';
 
 function AddToCart({ product, onAdd, className = '' }) {
   const handleClick = () => {
-    
     onAdd(product)
   };
 

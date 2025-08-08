@@ -1,6 +1,7 @@
 import express from 'express';
 import log from 'log';
 import dotenv from "dotenv";
+import cors from 'cors';
 import apiHandler from './apis/apiHandler.js';
 import { fileURLToPath } from "url";
 import path from "path";
@@ -13,6 +14,7 @@ const env = process.env.NODE_ENV || 'local';
 dotenv.config({ path: path.join(__dirname, `.env.${env}`) });
 
 var app = express();
+app.use(cors()); 
 app.use(express.json());
 
 apiHandler(app);

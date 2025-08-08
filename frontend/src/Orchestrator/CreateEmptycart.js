@@ -1,13 +1,16 @@
-import { CREATE_EMPTY_CART } from '../ApiRequests/Mutations';
-import BACKEND_BASE_URL from '../ApiRequests/routes';
+import { BACKEND_BASE_URL } from '../ApiRequests/routes';
+import { END_POINTS } from './Constants';
+import { HEADERS } from './Constants';
 
 async function createEmptyCart() {
-  const response = await fetch(BACKEND_BASE_URL, {
+  const url = BACKEND_BASE_URL + END_POINTS.CREATE_EMPTY_CART_END_POINT;
+  
+  const response = await fetch(url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      [HEADERS.CONTENT_TYPE]: HEADERS.APPLICATION_JSON,
     },
-    body: JSON.stringify(CREATE_EMPTY_CART),
+    body: JSON.stringify({}),
   });
 
   const data = await response.json();
